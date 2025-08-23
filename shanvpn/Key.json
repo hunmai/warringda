@@ -48,12 +48,6 @@
 "Valid":"365",
 "Expiration":"011\/4\/2026"
 },  
-{
-"Name":"Aung Thant Zin",
-"Key":"392eeb59b2c1fadd",
-"Valid":"30",
-"Expiration":"10\/09\/2025"
-},  
   {
 "Name":"Nang",
 "Key":"d3a0b6a735077aac",
@@ -80,4 +74,5 @@
 }
 
 ]
+
 
