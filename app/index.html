@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free VPN for Thailand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .logo {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 10px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a73e8;
+            font-size: 24px;
+            overflow: hidden;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+        
+        .apk-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .apk-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .apk-logo {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #1a73e8;
+            font-size: 18px;
+            overflow: hidden;
+        }
+        
+        .apk-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .apk-name {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a73e8;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #1a73e8;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #0d5bb9;
+        }
+        
+        .download-btn img {
+            width: 50px;
+            height: 50px;
+            margin-right: 12px;
+        }
+        
+        /* New Menu Styles */
+        .menu-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 70px;
+            right: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            width: 250px;
+            z-index: 1000;
+            display: none;
+            overflow: hidden;
+        }
+        
+        .dropdown-menu.active {
+            display: block;
+        }
+        
+        .dropdown-menu .menu-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+        
+        .dropdown-menu .menu-item:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-menu .menu-item:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .dropdown-menu .menu-item i {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #1a73e8;
+            width: 20px;
+            text-align: center;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .dropdown-menu {
+                width: 200px;
+                right: 10px;
+            }
+            
+            .download-btn {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            
+            .download-btn img {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="logo">
+                <img src="https://my-app-icon.netlify.app/vpn-icon.png" alt="J&K Brothers">
+            </div>
+            <p class="subtitle">Free VPN For Thailand</p>
+            
+            <!-- Dropdown Menu -->
+            <div class="dropdown-menu" id="dropdownMenu">
+            	<a href="https://all-app-link.netlify.app/package.html" class="menu-item">
+                    <i class="fas fa-sim-card"></i>
+                    <span>SIM & PACKAGE</span>
+                </a>
+                <a href="https://all-app-link.netlify.app/about" class="menu-item">
+                    <i class="fas fa-info-circle"></i>
+                    <span>About VPN</span>
+                </a>
+                <a href="https://all-app-link.netlify.app/HowToUse" class="menu-item">
+                    <i class="fas fa-question-circle"></i>
+                    <span>How to use</span>
+                </a>
+            </div>
+        </header>
+        
+        <section class="apk-section">
+            <div class="apk-card">
+                <div class="apk-logo">
+                    <img src="https://my-app-icon.netlify.app/icon_pukang.png" alt="PUKANG VPN">
+                </div>
+                <h2 class="apk-name">PUKANG VPN</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.pukangvpn.th" class="download-btn">
+                    <img src="https://my-app-icon.netlify.app/googleplay.png" alt="Play Store"> Download on PlayStore
+                </a>
+            </div>
+            
+            <div class="apk-card">
+                <div class="apk-logo">
+                    <img src="https://my-app-icon.netlify.app/icon_kham.png" alt="KHAM VPN">
+                </div>
+                <h2 class="apk-name">KHAM VPN</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.khamvpn.net" class="download-btn" class="download-btn">
+                    <img src="https://my-app-icon.netlify.app/googleplay.png" alt="Play Store"> Download on PlayStore
+                </a>
+            </div>
+            
+            <div class="apk-card">
+                <div class="apk-logo">
+                    <img src="https://my-app-icon.netlify.app/icon_shan.png" alt="SHAN VPN">
+                </div>
+                <h2 class="apk-name">SHAN VPN</h2>
+                <a href="https://play.google.com/store/apps/details?id=com.shanvpn.vpnth" class="download-btn">
+                    <img src="https://my-app-icon.netlify.app/googleplay.png" alt="Play Store"> Download on PlayStore
+                </a>
+            </div>
+        
+        <footer>
+            <p>© 2023 - Free VPN for Thailand. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Toggle dropdown menu
+        const menuToggle = document.getElementById('menuToggle');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+        
+        menuToggle.addEventListener('click', function() {
+            dropdownMenu.classList.toggle('active');
+        });
+        
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!menuToggle.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                dropdownMenu.classList.remove('active');
+            }
+        });
+        
+        // Handle menu item clicks
+        document.querySelectorAll('.dropdown-menu .menu-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                // Only prevent default for non-link items
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    const menuText = this.querySelector('span').textContent;
+                    alert(`You clicked on: ${menuText}`);
+                    dropdownMenu.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
